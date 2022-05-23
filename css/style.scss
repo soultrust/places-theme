@@ -1,0 +1,157 @@
+@import './normalize';
+
+body {
+  font-family: 'Oswald';
+  color: #0060a0;
+  
+}
+
+.archive,
+.home {
+  // display: grid;
+  // grid-template-columns: 3fr 1fr 1fr;
+}
+
+p {
+  font-family: 'Lato';
+  line-height: 1.4rem;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h2, h3, h4 {
+  font-family: 'Lato';
+}
+
+h1 {
+  font-weight: 500;
+  text-transform: uppercase;
+  grid-column: 1/-1;
+  margin-top: 1rem;
+
+  a {
+    text-decoration: none;
+    color: #0060a0;
+  }
+}
+
+h2 {
+  margin-bottom: .5rem;
+  grid-column: 1/-1;
+  
+  .categories &,
+  .tags & {
+    text-transform: uppercase;
+    // font-family: 'Oswald';
+    font-size: .9rem;
+    font-weight: 400;
+  }
+}
+
+h2 a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.links-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    padding-left: 1rem;
+    position: relative;
+    display: block;
+    padding: .2rem 1rem;
+
+    a {
+      font-family: 'Lato';
+      color: #000;
+    }
+
+    &::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      font-size: 2rem;
+      line-height: 1.3rem;
+    }
+  }
+}
+
+.categories,
+.tags {
+  margin-top: .5rem;
+}
+
+.post-meta {
+  font-family: 'Lato';
+
+  &__group {
+    display: inline-flex;
+  }
+
+  &__key {
+    font-weight: 700;
+    margin-right: .3rem;
+  }
+
+  &__categories {
+    margin-right: .6rem;
+  }
+}
+
+
+// new styles 2022
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  box-shadow: inset 0 0 0 9px #0060a0;
+  height: 100%;
+  width: 100vw;
+}
+
+body::before {
+  border: 9px solid #0060a0;
+  display: block;
+  content: '';
+  border-radius: 22px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(198,149,57, .5);
+}
+
+header {
+  border: 9px solid #0060a0;
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  border-bottom: 2px solid #0060a0;
+  background-color: rgba(255,255,255,.5);
+}
+
+.site {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  padding: 2rem 3rem;
+}
