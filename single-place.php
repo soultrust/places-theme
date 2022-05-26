@@ -4,8 +4,37 @@ get_header();
 
 while(have_posts()) {
   the_post(); ?>
-  <h2><?php the_title(); ?></h2>
+  <header class="place-header">
+    <h2 class="place-name"><?php the_title(); ?></h2>
+    <div class="place-meta">
+   
+<span>
+    <a href="<?php the_field('website'); ?>" target="_blank">
+      <?php the_field('website'); ?>
+    </a>
+</span>
+
+      <span class="place-address">
+        <?php the_field('address'); ?>
+      </span>
+    </div>
+  </header>
+  <?php if (is_singular('place') && get_field('map_location')) { ?>
+    <div class="acf-map">
+    <?php
+        
+        $mapLocation = get_field('map_location');
+        print_r($mapLocation['lat']);
+        ?>
+        <div class="marker"
+             data-lat="<?php echo $mapLocation['lat'] ?>"
+             data-lng="<?php echo $mapLocation['lng'] ?>">
+        </div>
+        
+    </div>
+<?php } ?>
   <?php the_content(); ?>
+
   <div class="post-meta">
 <?php
 $taxonomy = 'category';

@@ -14,5 +14,6 @@
     "@wordpress/scripts": "*",
     "axios": "^0.24.0",
     "normalize.css": "^8.0.1"
-  }
+  },
+  "type": "module"
 }

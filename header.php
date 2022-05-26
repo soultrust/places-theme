@@ -7,13 +7,13 @@
   <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
+<header class="site-header">
 <?php if (is_front_page() && is_home()) { ?>
-  <h1><?php echo get_bloginfo('name'); ?></h1>
+  <h1>SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span></h1>
 <?php } else { ?>
 <h1>
   <a href="<?php echo esc_url(home_url('/')); ?>">
-    <?php echo get_bloginfo('name'); ?>
+    SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span>
   </a>
 </h1>
 <?php } ?></header>
