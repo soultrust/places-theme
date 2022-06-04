@@ -7,6 +7,14 @@ function places_files() {
   wp_enqueue_style('font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
   wp_enqueue_style('main-styles', get_theme_file_uri('/build/style-index.css'));
   wp_enqueue_style('dashicons');
+
+  // For dynamically setting k6.root_url prop to point to root
+  // whether on prod or local. (example usage in Search.js)
+  wp_localize_script(
+    'main-js', 'places', array(
+      'root_url' => get_site_url()
+    )
+  );
 }
 add_action('wp_enqueue_scripts', 'places_files');
 

@@ -16,5 +16,19 @@
     SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span>
   </a>
 </h1>
-<?php } ?></header>
+<?php } ?>
+
+<div class="search">
+  <div class="search-field" id="search-field">
+    <input type="text" class="search-input" id="search-input" placeholder="Search Places" autocomplete="off" />
+  </div>
+  <div class="search-trigger" id="search-trigger">
+    <div class="search-trigger-txt" id="search-trigger-text">
+      <span>Search</span>
+      <span>Places</span>
+    </div>
+    <div class="dashicons dashicons-search search-icon"></div>
+  </div>
+</div>
+</header>
 <div class="site">

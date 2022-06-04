@@ -1,3 +1,5 @@
+@use 'search';
+
 * {
   margin: 0;
   padding: 0;
@@ -36,7 +38,9 @@ body {
   border-top-left-radius: 22px;
   border-top-right-radius: 22px;
   border-bottom: 4px solid #0060a0;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.6);
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
