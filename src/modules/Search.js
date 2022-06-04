@@ -36,7 +36,7 @@ class Search {
         }
         this.typingTimer = setTimeout(this.getResults.bind(this), 750);
       } else {
-        // this.isSpinnerVisible = false;
+        this.isSpinnerVisible = false;
       }
     }
     this.previousValue = this.searchInput.value;
@@ -46,7 +46,6 @@ class Search {
     fetch(places.root_url + '/wp-json/wp/v2/place?search=' + this.searchInput.value)
       .then(results => results.json())
       .then(results => {
-        debugger;
         this.resultsDiv.innerHTML = `
         <div class="row">
           <h2>SEARCH RESULTS</h2>

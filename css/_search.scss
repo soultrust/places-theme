@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  grid-column: 2/-1;
 }
 
 .search-trigger {
@@ -13,6 +14,7 @@
   margin: {
     top: 1.5rem;
     right: 2.5rem;
+    left: .4rem;
   }
 
   &-txt {
@@ -29,22 +31,21 @@
 
 .search-input {
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
   background-color: #f7f7f6;
   font-size: 1.2rem;
   z-index: 1;
-  margin: 0;
   flex-grow: 1;
   color: #9e0000;
-  padding-left: .4rem;
+  padding: .2rem 0 0rem .7rem;
   border: {
     width: 0 0 2px 0;
     radius: 0;
-    color: var(--red);
+    color: var(--borderColor);
   }
 
   &::placeholder {
-    color: var(--red);
+    color: var(--borderColor);
     opacity: 0.5;
     font-family: 'Lato';
   }
@@ -52,7 +53,7 @@
   &:focus,
   &:focus-visible {
     outline: none;
-    color: var(--red);
+    color: var(--borderColor);
   }
 }
 
@@ -61,10 +62,10 @@
   overflow-x: hidden;
   z-index: 110;
   position: absolute;
-  top: 64px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
+  top: 76px;
+  left: 9px;
+  right: 9px;
+  bottom: 9px;
   background-color: #d7d7d2;
   visibility: hidden;
   opacity: 0;

@@ -9,9 +9,9 @@
 <body <?php body_class(); ?>>
 <header class="site-header">
 <?php if (is_front_page() && is_home()) { ?>
-  <h1>SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span></h1>
+  <h1 class="site-title">SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span></h1>
 <?php } else { ?>
-<h1>
+<h1 class="site-title">
   <a href="<?php echo esc_url(home_url('/')); ?>">
     SOULTRUST PLACES <span style="opacity: 0.4">DATABASE</span>
   </a>

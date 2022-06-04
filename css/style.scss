@@ -1,5 +1,8 @@
 @use 'search';
 
+:root {
+  --borderColor: #0060a0;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,14 +15,14 @@ html {
 
 body {
   position: relative;
-  box-shadow: inset 0 0 0 9px #0060a0;
+  box-shadow: inset 0 0 0 9px var(--borderColor);
   height: 100%;
   width: 100vw;
   font-family: 'Oswald';
   color: #0060a0;
 
   &::before {
-    border: 9px solid #0060a0;
+    border: 9px solid var(--borderColor);
     display: block;
     content: '';
     border-radius: 22px;
@@ -34,19 +37,19 @@ body {
 }
 
 .site-header {
-  border: 9px solid #0060a0;
+  border: 9px solid var(--borderColor);
   border-top-left-radius: 22px;
   border-top-right-radius: 22px;
-  border-bottom: 4px solid #0060a0;
+  border-bottom: 4px solid var(--borderColor);
   background-color: rgba(255,255,255,.6);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
 }
 
-h1 {
+.site-title {
   font-weight: 500;
   text-transform: uppercase;
-  grid-column: 1/-1;
+  grid-column: 1/2;
   margin-top: 1rem;
   margin-left: 2.4rem;
   margin-bottom: 0;
@@ -88,7 +91,7 @@ h2 {
     &::after {
       border-radius: 6px;
       height: 4px;
-      background-color: #0060a0;
+      background-color: var(--borderColor);
       // content: '';
       display: block;
       position: absolute;
@@ -111,7 +114,7 @@ h2 {
 }
 
 a {
-  color: #0060a0;
+  color: var(--borderColor);
 }
 
 .links-list {
