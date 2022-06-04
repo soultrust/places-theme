@@ -52,11 +52,12 @@ add_action('after_setup_theme', 'places_features');
 // }
 // add_action( 'widgets_init', 'k6_widgets_init' );
 
-// Enable tags for recipes
-// function gp_register_taxonomy_for_object_type() {
-//     register_taxonomy_for_object_type( 'post_tag', 'recipe' );
-// };
-// add_action( 'init', 'gp_register_taxonomy_for_object_type' );
+// Enable tags for places
+function gp_register_taxonomy_for_object_type() {
+  register_taxonomy_for_object_type( 'category', 'place' );
+  register_taxonomy_for_object_type( 'post_tag', 'place' );
+};
+add_action( 'init', 'gp_register_taxonomy_for_object_type' );
 
 
 
@@ -202,12 +203,7 @@ add_action('after_setup_theme', 'places_features');
 
 function places_post_types() {
   register_post_type('place', array(
-    'supports' => array('title', 'thumbnail', 'widget'),
-    'show_in_rest' => true,
-    'rewrite' => array('slug' => 'places'),
     'has_archive' => true,
-    'menu_position' => 2,
-    'public' => true,
     'labels' => array(
       'name' => 'Places',
       'all_items' => 'All Places',
@@ -215,7 +211,13 @@ function places_post_types() {
       'edit_item' => 'Edit Place',
       'singular_name' => 'Place'
     ),
-    'menu_icon' => 'dashicons-food'
+    'menu_icon' => 'dashicons-food',
+    'menu_position' => 2,
+    'public' => true,
+    'rewrite' => array('slug' => 'places'),
+    'show_in_rest' => true,
+    'supports' => array('title', 'thumbnail', 'widget'),
+    'taxonomies' => array('category', 'post_tag')
   ));
 }
 add_action('init', 'places_post_types');
