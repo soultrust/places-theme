@@ -20,6 +20,11 @@
   &-txt {
     margin-right: .3rem;
     font-family: 'Lato';
+    display: flex;
+
+    span:first-child {
+      margin-right: .3rem;
+    }
   }
 }
 

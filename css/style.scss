@@ -103,13 +103,26 @@ h2 {
   &-name {
     font-weight: 700;
     font-size: 2.2rem;
+    display: flex;
+    align-items: flex-end;
   }
   &-meta {
     text-align: right;
     margin-bottom: .5rem;
-    span {
-      display: block;
+
+    &__line-item {
+      display: flex;
+      justify-content: flex-end;
+
+      &-key {
+        font-weight: 700;
+        margin-right: .3rem;
+      }
+      &__categories {
+        margin-right: .6rem;
+      }
     }
+    
   }
 }
 
@@ -135,26 +148,6 @@ a {
       position: absolute;
       left: 0;
     }
-  }
-}
-
-.categories,
-.tags {
-  margin-top: .5rem;
-}
-
-.post-meta {
-  &__group {
-    display: inline-flex;
-  }
-
-  &__key {
-    font-weight: 700;
-    margin-right: .3rem;
-  }
-
-  &__categories {
-    margin-right: .6rem;
   }
 }
 

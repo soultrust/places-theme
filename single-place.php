@@ -8,34 +8,6 @@ while(have_posts()) {
     <h2 class="place-name"><?php the_title(); ?></h2>
     <div class="place-meta">
    
-<span>
-    <a href="<?php the_field('website'); ?>" target="_blank">
-      <?php the_field('website'); ?>
-    </a>
-</span>
-
-      <span class="place-address">
-        <?php the_field('address'); ?>
-      </span>
-    </div>
-  </header>
-  <?php if (is_singular('place') && get_field('map_location')) { ?>
-    <div class="acf-map">
-    <?php
-        
-        $mapLocation = get_field('map_location');
-        print_r($mapLocation['lat']);
-        ?>
-        <div class="marker"
-             data-lat="<?php echo $mapLocation['lat'] ?>"
-             data-lng="<?php echo $mapLocation['lng'] ?>">
-        </div>
-        
-    </div>
-<?php } ?>
-  <?php the_content(); ?>
-
-  <div class="post-meta">
 <?php
 $taxonomy = 'category';
 
@@ -66,28 +38,63 @@ if (!empty($post_terms ) && !is_wp_error($post_terms)) {
 
   $terms = rtrim(trim(str_replace('<br />', $separator, $terms)), $separator);
 ?>
-<span class="post-meta__categories post-meta__group">
-  <span class="post-meta__key">categories:</span>
-  <span class="post-meta__value">
+<span class="categories place-meta__line-item">
   <?php // Display post categories.
     echo  $terms;
   ?>
-  </span>
 </span>
 <?php
 }
 ?>
 
-	  <span class="tags">
+	  <span class="tags place-meta__line-item">
       <?php the_tags( 
-        '<span class="post-meta__key">tags:</span><span class="post-meta__value">', 
+        '<span class="place-meta__line-item-key">tags:</span> <span class="place-meta__line-item-value">', 
         ', ', 
         '</span>'
       ); ?>
     </span>
-  </div>
+  
   <?php 
 }
+?>
+
+
+
+
+
+<span>
+    <a href="<?php the_field('website'); ?>" target="_blank">
+      <?php the_field('website'); ?>
+    </a>
+</span>
+
+      <span class="place-meta__line-item address">
+        <?php the_field('address'); ?>
+      </span>
+
+
+
+
+
+
+    </div>
+  </header>
+  <?php if (is_singular('place') && get_field('map_location')) { ?>
+    <div class="acf-map">
+    <?php
+        
+        $mapLocation = get_field('map_location');
+        print_r($mapLocation['lat']);
+        ?>
+        <div class="marker"
+             data-lat="<?php echo $mapLocation['lat'] ?>"
+             data-lng="<?php echo $mapLocation['lng'] ?>">
+        </div>
+        
+    </div>
+<?php } ?>
+  <?php the_content(); 
 
 get_footer();
 
