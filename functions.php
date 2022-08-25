@@ -216,7 +216,8 @@ function places_post_types() {
     'public' => true,
     'rewrite' => array('slug' => 'places'),
     'show_in_rest' => true,
-    'supports' => array('title', 'thumbnail', 'widget'),
+    // Below when uncommented will turn off block editor
+    // 'supports' => array('title', 'thumbnail', 'widget'),
     'taxonomies' => array('category', 'post_tag')
   ));
 }
