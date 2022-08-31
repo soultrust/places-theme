@@ -200,7 +200,6 @@ add_action( 'init', 'gp_register_taxonomy_for_object_type' );
 
 // below here from places 2022
 
-
 function places_post_types() {
   register_post_type('place', array(
     'has_archive' => true,
@@ -211,29 +210,24 @@ function places_post_types() {
       'edit_item' => 'Edit Place',
       'singular_name' => 'Place'
     ),
-    'menu_icon' => 'dashicons-food',
+    'menu_icon' => 'dashicons-location',
     'menu_position' => 2,
     'public' => true,
     'rewrite' => array('slug' => 'places'),
     'show_in_rest' => true,
-    // Below when uncommented will turn off block editor
-    // 'supports' => array('title', 'thumbnail', 'widget'),
+    'supports' => array('custom-fields', 'editor', 'thumbnail', 'title', 'widget'),
     'taxonomies' => array('category', 'post_tag')
   ));
 }
 add_action('init', 'places_post_types');
 
-// function custom_enter_title_text( $input )
-// {
-//     if ('site' === get_post_type() ) {
-//         return __('Add site name', 'wp-rig');
-//     }
-//     if ('people' === get_post_type()) {
-//         return __('Add full name', 'wp-rig');
-//     }
-//     return $input;
-// }
-// add_filter('enter_title_here', 'custom_enter_title_text');
+function custom_enter_title_text( $input ) {
+  if ('place' === get_post_type() ) {
+      return __('Enter name of place', 'soultrust');
+  }
+  return $input;
+}
+add_filter('enter_title_here', 'custom_enter_title_text');
 
 // function change_columns($cols)
 // {
@@ -281,22 +275,6 @@ add_action('init', 'places_post_types');
 //     return $classes;
 // }
 
-// add_filter('body_class', 'filter_body_classes');
-
-
-// function get_soultrust_theme_mod($slug, $default_value)
-// {
-//     if (get_theme_mod($slug) === '0') {
-//         return '0';
-//     }
-//     return get_theme_mod($slug) ? get_theme_mod($slug) : $default_value;
-// }
-
-// add_action('wp_enqueue_scripts', 'load_dashicons_front_end');
-// function load_dashicons_front_end()
-// {
-//     wp_enqueue_style('dashicons');
-// }
 
 function soultrustMapKey()
 {

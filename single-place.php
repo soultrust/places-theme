@@ -45,6 +45,9 @@ if (!empty($post_terms ) && !is_wp_error($post_terms)) {
 </span>
 <?php
 }
+
+$ophours = get_post_meta($post->ID, '_soultrust_ophours', true);
+$ophours = json_decode($ophours);
 ?>
 
 	  <span class="tags place-meta__line-item">
@@ -93,8 +96,17 @@ if (!empty($post_terms ) && !is_wp_error($post_terms)) {
         </div>
         
     </div>
-<?php } ?>
-  <?php the_content(); 
+<?php } 
+if ($ophours) {?>
+  <div class="ophours">
+    <div class="ophours-title">Hours of Operation</div>
+    <?php 
+    foreach ($ophours as $row) {
+      echo "<div class='ophours-row'><span class='ophours-day'>$row->day:</span><span class='ophours-hours'>$row->hours</span></div>";
+    } ?>
+  </div>
+  <?php } 
+the_content(); 
 
 get_footer();
 

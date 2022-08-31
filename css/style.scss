@@ -153,8 +153,31 @@ a {
 
 .acf-map {
   height: 17rem;
-  grid-column: 2/-1;
+  grid-column: -3/-1;
   border: 2px solid;
   border-radius: 9px;
   margin-bottom: 1rem;
+}
+
+.ophours {
+  grid-column: -3/-1;
+  width: max-content;
+  border: 1px solid;
+  border-radius: 9px;
+  padding: .5rem .8rem;
+
+  &-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+  }
+  
+  &-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    margin-bottom: .3rem;
+  }
+  &-hours {
+    margin-left: .9rem;
+  }
 }
