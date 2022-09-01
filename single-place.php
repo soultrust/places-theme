@@ -100,10 +100,16 @@ $ophours = json_decode($ophours);
 if ($ophours) {?>
   <div class="ophours">
     <div class="ophours-title">Hours of Operation</div>
+    <table>
     <?php 
     foreach ($ophours as $row) {
-      echo "<div class='ophours-row'><span class='ophours-day'>$row->day:</span><span class='ophours-hours'>$row->hours</span></div>";
+      echo 
+      "<tr class='ophours-row'>
+        <td class='ophours-day'>$row->day:</td>
+        <td class='ophours-hours'>$row->hours</td>
+      </tr>";
     } ?>
+    </table>
   </div>
   <?php } 
 the_content(); 
