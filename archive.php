@@ -10,7 +10,7 @@ get_header();
   );
   $category_args = array(
     'post_type' => 'place',
-    'category' => single_cat_title('', false)
+    'category_name' => single_cat_title('', false)
   );
 
   if (is_tag()) {
