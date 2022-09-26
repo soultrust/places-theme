@@ -4,13 +4,15 @@ get_header();
 <h2 class="archive-title"><?php the_archive_title(); ?></h2>
 <ul class="links-list">
 <?php
+  $queried_obj = get_queried_object();
+  
   $tag_args = array(
     'post_type' => 'place',
-    'tag' => single_tag_title('', false)
+    'tag' => $queried_obj->slug
   );
   $category_args = array(
     'post_type' => 'place',
-    'category_name' => single_cat_title('', false)
+    'category_name' => $queried_obj->slug
   );
 
   if (is_tag()) {
@@ -27,7 +29,7 @@ get_header();
   } wp_reset_postdata();
  ?>
 </ul>
-
 <?php
+
 get_sidebar();
 get_footer();
