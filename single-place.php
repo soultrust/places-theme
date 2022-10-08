@@ -83,6 +83,7 @@ $ophours = json_decode($ophours);
 
     </div>
   </header>
+  <div class="content"><?php the_content(); ?></div>
   <?php if (is_singular('place') && get_field('map_location')) { ?>
     <div class="acf-map">
     <?php
@@ -112,7 +113,6 @@ if ($ophours) {?>
     </table>
   </div>
   <?php } 
-the_content(); 
 
 get_footer();
 

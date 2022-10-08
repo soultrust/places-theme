@@ -229,6 +229,8 @@ function custom_enter_title_text( $input ) {
 }
 add_filter('enter_title_here', 'custom_enter_title_text');
 
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
 // function change_columns($cols)
 // {
 //     $cols = array(
